@@ -18,8 +18,7 @@ jobs:
     permissions:
       contents: read    # required to push the merge commit to trunk
       statuses: write   # required to set the trunk-worthy status check and for gh insitu
-      pages: write      # required for actions/configure-pages
-      id-token: write   # required for actions/deploy-pages if deploying in the same workflow
+      pages: write       # required to deploy to GitHub Pages
 
     steps:
       - name: Checkout
@@ -56,12 +55,14 @@ jobs:
           echo "Ref: ${{ github.ref_name }}" >> astro/dist/version.txt
           echo "Commit: ${{ github.sha }}" >> astro/dist/version.txt
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5.0.0
+      - name: Upload build artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v7
         with:
           name: github-pages-${{ github.sha }}
           path: astro/dist
           retention-days: 3
+
 
   merge-to-trunk:
     name: Merge to trunk
