@@ -12,6 +12,17 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Lean Crowd Manifest',
+      defaultLocale: 'root',
+      locales: {
+        root: {
+          label: 'English',
+          lang: 'en',
+        },
+        da: {
+          label: 'Dansk',
+          lang: 'da',
+        },
+      },
       social: [
         {
           icon: 'github',
@@ -22,14 +33,16 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Guides',
+          translations: { da: 'Vejledninger' },
           items: [
-            { label: 'Example Guide', slug: 'guides/example' },
+            { label: 'Example Guide', translations: { da: 'Eksempelvejledning' }, slug: 'guides/example' },
           ],
         },
         {
           label: 'Reference',
+          translations: { da: 'Reference' },
           items: [
-            { label: 'Example Reference', slug: 'reference/example' },
+            { label: 'Example Reference', translations: { da: 'Eksempelreference' }, slug: 'reference/example' },
           ],
         },
       ],
