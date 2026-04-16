@@ -66,11 +66,11 @@ export default defineConfig({
               translations: { da: "Triad-modellen" },
               slug: "about/triad-model",
             },
-            {
-              label: "Story: From Praqma to C.R.O.W.D.",
-              translations: { da: "Historie: Fra Praqma til C.R.O.W.D." },
-              slug: "about/story",
-            },
+//            {
+//              label: "Story: From Praqma to C.R.O.W.D.",
+//              translations: { da: "Historie: Fra Praqma til C.R.O.W.D." },
+//              slug: "about/story",
+//            },
           ],
         },
         {
@@ -94,32 +94,32 @@ export default defineConfig({
             },
           ],
         },
-        {
-          label: "Careers & Capability",
-          translations: { da: "Karrierer & Evner" },
-          items: [
-            {
-              label: "Capability Matrix",
-              translations: { da: "Evne-matrix" },
-              slug: "careers/capability-matrix",
-            },
-            {
-              label: "Compensation & Benefits",
-              translations: { da: "Løn & Goder" },
-              slug: "careers/compensation",
-            },
-            {
-              label: "Growth Path",
-              translations: { da: "Udviklingsvej" },
-              slug: "careers/growth",
-            },
-            {
-              label: "Advancement Criteria",
-              translations: { da: "Avancer Kriterier" },
-              slug: "careers/advancement",
-            },
-          ],
-        },
+//        {
+//          label: "Careers & Capability",
+//          translations: { da: "Karrierer & Evner" },
+//          items: [
+//            {
+//              label: "Capability Matrix",
+//              translations: { da: "Evne-matrix" },
+//              slug: "careers/capability-matrix",
+//            },
+//            {
+//              label: "Compensation & Benefits",
+//              translations: { da: "Løn & Goder" },
+//              slug: "careers/compensation",
+//            },
+//            {
+//              label: "Growth Path",
+//              translations: { da: "Udviklingsvej" },
+//              slug: "careers/growth",
+//            },
+//            {
+//              label: "Advancement Criteria",
+//              translations: { da: "Avancer Kriterier" },
+//              slug: "careers/advancement",
+//            },
+//          ],
+//        },
         {
           label: "Methodology",
           translations: { da: "Metodologi" },
