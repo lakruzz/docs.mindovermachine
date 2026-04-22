@@ -26,7 +26,8 @@
         "bradlc.vscode-tailwindcss",
         "DavidAnson.vscode-markdownlint",
         "streetsidesoftware.code-spell-checker",
-        "streetsidesoftware.code-spell-checker-danish"
+        "streetsidesoftware.code-spell-checker-danish",
+        "unifiedjs.vscode-mdx"
       ],
       "settings": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
