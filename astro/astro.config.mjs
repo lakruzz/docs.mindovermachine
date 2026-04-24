@@ -41,7 +41,7 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/lakruzz/lean-crowd-manifest",
+          href: "https://github.com/mindovermachine-dev",
         },
       ],
       sidebar: [
@@ -59,11 +59,6 @@ export default defineConfig({
               translations: { da: "C.R.O.W.D. Værdierne" },
               slug: "vision/crowd-values",
             },
-//            {
-//              label: "Regenerative Thinking",
-//              translations: { da: "Regenerativ Tænkning" },
-//              slug: "vision/regenerative-thinking",
-//            },
           ],
         },
         {
@@ -71,20 +66,10 @@ export default defineConfig({
           translations: { da: "Om Os" },
           items: [
             {
-              label: "Design Science Laboratory",
-              translations: { da: "Design Science Laboratorium" },
-              slug: "about/design-science-lab",
+              label: "Founder's Story",
+              translations: { da: "Founder's Story" },
+              slug: "about/founder-story",
             },
-            {
-              label: "The Triad Model",
-              translations: { da: "Triad-modellen" },
-              slug: "about/triad-model",
-            },
-            //            {
-            //              label: "Story: From Praqma to C.R.O.W.D.",
-            //              translations: { da: "Historie: Fra Praqma til C.R.O.W.D." },
-            //              slug: "about/story",
-            //            },
           ],
         },
         {
@@ -92,51 +77,15 @@ export default defineConfig({
           translations: { da: "Styring" },
           items: [
             {
-              label: "General Assembly",
-              translations: { da: "Generalforsamling" },
-              slug: "governance/general-assembly",
-            },
-            {
-              label: "The Board",
-              translations: { da: "Bestyrelsen" },
-              slug: "governance/board",
-            },
-            {
               label: "Regenerative Charter",
               translations: { da: "Regenerativ Charter" },
               slug: "governance/charter",
             },
           ],
         },
-        //        {
-        //          label: "Careers & Capability",
-        //          translations: { da: "Karrierer & Evner" },
-        //          items: [
-        //            {
-        //              label: "Capability Matrix",
-        //              translations: { da: "Evne-matrix" },
-        //              slug: "careers/capability-matrix",
-        //            },
-        //            {
-        //              label: "Compensation & Benefits",
-        //              translations: { da: "Løn & Goder" },
-        //              slug: "careers/compensation",
-        //            },
-        //            {
-        //              label: "Growth Path",
-        //              translations: { da: "Udviklingsvej" },
-        //              slug: "careers/growth",
-        //            },
-        //            {
-        //              label: "Advancement Criteria",
-        //              translations: { da: "Avancer Kriterier" },
-        //              slug: "careers/advancement",
-        //            },
-        //          ],
-        //        },
         {
-          label: "Methodology",
-          translations: { da: "Metodologi" },
+          label: "How We Work",
+          translations: { da: "Sådan arbejder vi" },
           items: [
             {
               label: "Regenerative SDLC",
@@ -162,69 +111,6 @@ export default defineConfig({
               label: "Developer Experience (DevX)",
               translations: { da: "Udvikler Erfaring (DevX)" },
               slug: "methodology/devx",
-            },
-          ],
-        },
-        {
-          label: "Open Source & Commons",
-          translations: { da: "Open Source & Fællesgoder" },
-          items: [
-            {
-              label: "Philosophy",
-              translations: { da: "Filosofi" },
-              slug: "commons/philosophy",
-            },
-            {
-              label: "Cultural Heritage",
-              translations: { da: "Kulturarv" },
-              slug: "commons/heritage",
-            },
-            {
-              label: "Project Directory",
-              translations: { da: "Projektdirectory" },
-              slug: "commons/projects",
-            },
-          ],
-        },
-        {
-          label: "Fellowship Program",
-          translations: { da: "Stipendiatureprogram" },
-          items: [
-            {
-              label: "Overview",
-              translations: { da: "Oversigt" },
-              slug: "fellowship/overview",
-            },
-            {
-              label: "The Model",
-              translations: { da: "Modellen" },
-              slug: "fellowship/model",
-            },
-            {
-              label: "Apply",
-              translations: { da: "Ansøg" },
-              slug: "fellowship/apply",
-            },
-          ],
-        },
-        {
-          label: "Community",
-          translations: { da: "Fællesskab" },
-          items: [
-            {
-              label: "For Members & Clients",
-              translations: { da: "For Medlemmer & Klienter" },
-              slug: "community/members",
-            },
-            {
-              label: "For Contributors",
-              translations: { da: "For Bidragydere" },
-              slug: "community/contributors",
-            },
-            {
-              label: "Contact & Connect",
-              translations: { da: "Kontakt & Forbind" },
-              slug: "community/contact",
             },
           ],
         },

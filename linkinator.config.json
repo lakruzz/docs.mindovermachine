@@ -1,0 +1,11 @@
+{
+  "recurse": true,
+  "skip": [
+    "\/node_modules\/"
+  ],
+  "silent": false,
+  "concurrency": 10,
+  "directoryListing": true,
+  "requireHttps": "error",
+  "checkCss": true
+}

@@ -47,6 +47,16 @@ inventory:
     command: |
       npm run install:astro
 
+  - id: repo-install
+    name: "Install repo dependencies"
+    command: |
+      npm run install:repo
+
+  - id: link-checker
+    name: "Check for broken links"
+    command: "npm run check-links"
+
+
   - id: "install-lint-tools"
     name: "Install linting and checker tools"
     command: |
@@ -68,13 +78,15 @@ waves:
       - "safe-repo"
       - "repo-gitconfig"
       - "astro-install"
-
+      - "repo-install"
+      
   - id: "prep-runner"
     name: "Run to prepare GitHub runner"
     parallel: true
     checks:
       - "gh-auth"
       - "astro-install"
+      - "repo-install"
       - "repo-gitconfig"
       - "install-lint-tools"
 
@@ -85,9 +97,15 @@ waves:
       - "build"
 
   - id: "trunk-worthy"
-    name: "Worthy for trunk"
+    name: "Worthy for trunk - build"
     parallel: true
     checks:
       - "cspell"
       - "markdownlint"
       - "build"
+
+  - id: "link-checker"
+    name: "Worthy for trunk - post-build "
+    parallel: true
+    checks:
+      - "link-checker"
