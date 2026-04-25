@@ -1,6 +1,17 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import rehypeExternalLinks from "rehype-external-links";
+import { collectFrontmatterRedirects } from "./src/config/frontmatter-redirects.mjs";
+
+const frontmatterRedirects = collectFrontmatterRedirects({
+  docsRoot: new URL("./src/content/docs", import.meta.url),
+  localePrefixes: ["da"],
+  onConflict: ({ source, existing, incoming, filePath }) => {
+    console.warn(
+      `[redirect-from] Skipping conflicting source '${source}' from '${filePath}'. Already mapped to '${existing}' and ignored '${incoming}'.`
+    );
+  },
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -117,8 +128,5 @@ export default defineConfig({
       ],
     }),
   ],
-  redirects: {
-    "/methodology": "/methodology/how-we-work",
-    "/da/methodology": "/da/methodology/how-we-work"
-  },
+  redirects: frontmatterRedirects,
 });
