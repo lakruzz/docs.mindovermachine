@@ -73,48 +73,52 @@ export default defineConfig({
           ],
         },
         {
-          label: "Governance",
-          translations: { da: "Styring" },
+          label: "Organization",
+          translations: { da: "Organisation" },
           items: [
             {
+              label: "The Three Pillars",
+              translations: { da: "De tre Søjler" },
+              slug: "governance/three-pillars",
+            }, 
+            {
               label: "Regenerative Charter",
-              translations: { da: "Regenerativ Charter" },
+              translations: { da: "MioMa Charter" },
               slug: "governance/charter",
             },
           ],
         },
         {
-          label: "How We Work",
-          translations: { da: "Sådan arbejder vi" },
+          label: "Methodology",
+          translations: { da: "Metoder" },
           items: [
             {
-              label: "Regenerative SDLC",
-              translations: { da: "Regenerativ SDLC" },
-              slug: "methodology/sdlc",
+              label: "How We Work",
+              translations: { da: "Sådan arbejder vi" },
+              slug: "methodology/how-we-work",
             },
-            {
-              label: "Green Algorithms",
-              translations: { da: "Grønne Algoritmer" },
-              slug: "methodology/green-algorithms",
-            },
-            {
-              label: "The Toyota Way",
-              translations: { da: "Toyota-vejen" },
-              slug: "methodology/toyota-way",
-            },
-            {
-              label: "Participatory Design",
-              translations: { da: "Deltagende Design" },
-              slug: "methodology/participatory-design",
-            },
-            {
-              label: "Developer Experience (DevX)",
-              translations: { da: "Udvikler Erfaring (DevX)" },
-              slug: "methodology/devx",
-            },
+//            {
+//              label: "The Toyota Way",
+//              translations: { da: "Toyota-vejen" },
+//              slug: "methodology/toyota-way",
+//            },
+//            {
+//              label: "Participatory Design",
+//              translations: { da: "Deltagende Design" },
+//              slug: "methodology/participatory-design",
+//            },
+//            {
+//              label: "Developer Experience (DevX)",
+//              translations: { da: "Udvikler Erfaring (DevX)" },
+//              slug: "methodology/devx",
+//            },
           ],
         },
       ],
     }),
   ],
+  redirects: {
+    "/methodology": "/methodology/how-we-work",
+    "/da/methodology": "/da/methodology/how-we-work"
+  },
 });

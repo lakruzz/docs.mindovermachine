@@ -9,7 +9,8 @@
     "astro":   "cd astro && npx astro",
     "install:astro": "npm --prefix astro install",
     "install:repo": "npm install",
-    "check-links": "linkinator . /da/ --server-root astro/dist --recurse"
+    "check-links": "linkinator . /da/ --server-root astro/dist --recurse",
+    "check-links:files": "node scripts/check-links-with-sources.mjs"
   },
   "devDependencies": {
     "cspell": "^6.28.0",
