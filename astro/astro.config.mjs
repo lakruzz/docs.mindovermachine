@@ -35,7 +35,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "Mind over Machine Manifest",
+      title: "Mind over Machine",
       customCss: ["./src/styles/custom.scss"],
       defaultLocale: "da",
       locales: {
@@ -76,6 +76,11 @@ export default defineConfig({
           label: "About Us",
           translations: { da: "Om Os" },
           items: [
+            {
+              label: "Contact",
+              translations: { da: "Kontakt" },
+              slug: "about/contact",
+            },
             {
               label: "Founder's Story",
               translations: { da: "Founder's Story" },
