@@ -35,7 +35,11 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: "Mind over Machine",
+      title: "Regenerative Software Foundation",
+      favicon: '/mom-favicon.ico',
+      logo: {
+        src: './src/assets/mom-logo-text-transparent.png',
+      },
       customCss: ["./src/styles/custom.scss"],
       defaultLocale: "da",
       locales: {
