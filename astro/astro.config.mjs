@@ -40,6 +40,9 @@ export default defineConfig({
       logo: {
         src: "./src/assets/mom-logo-text-transparent.png",
       },
+      components: {
+        Footer: "./src/components/overrides/Footer.astro",
+      },
       customCss: ["./src/styles/custom.scss"],
       defaultLocale: "da",
       locales: {

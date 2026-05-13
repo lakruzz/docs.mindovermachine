@@ -10,6 +10,7 @@ export const collections = {
       extend: z.object({
         redirectFrom: z.union([z.string(), z.array(z.string())]).optional(),
         'redirect-from': z.union([z.string(), z.array(z.string())]).optional(),
+        giscus: z.boolean().optional(),
       }),
     }),
   }),
