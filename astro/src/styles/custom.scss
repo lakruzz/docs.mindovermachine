@@ -135,3 +135,51 @@ fact,
     }
   }
 }
+
+/* Print media styles for PDF generation */
+@media print {
+  /* Page break control */
+  .page-break {
+    page-break-after: always;
+  }
+
+  /* Orphan/widow control */
+  body,
+  p,
+  li,
+  dt,
+  dd {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Prevent headings from being isolated */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0.5rem; /* Reduce spacing to keep heading close to content */
+    orphans: 1;
+    widows: 1;
+  }
+
+  /* Reduce space before headings to prevent orphaning */
+  h1 + *,
+  h2 + *,
+  h3 + *,
+  h4 + *,
+  h5 + *,
+  h6 + * {
+    margin-top: 0;
+  }
+
+  /* Keep sections together when possible */
+  section,
+  article {
+    page-break-inside: avoid;
+  }
+}
