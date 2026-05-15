@@ -21,6 +21,9 @@ npm-debug.log*
 # takt
 .tt_cache
 
+# generated version info (local dev)
+astro/public/version.txt
+
 # General
 /tmp
 /temp

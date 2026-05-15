@@ -65,6 +65,16 @@ inventory:
     command: |
       npm install -g cspell markdownlint-cli2 @cspell/dict-da-dk prettier
 
+  - id: "install-browser"
+    name: "Install Chromium"
+    command: |
+      sudo apt-get update
+      sudo apt-get install -y chromium
+
+  - id: "gen-version"
+    name: "Generate version.txt for local dev"
+    command: "npm run write-version"
+
   - id: "build"
     name: "Build site"
     command: "npm run build"
@@ -91,6 +101,7 @@ waves:
       - "repo-gitconfig"
       - "astro-install"
       - "repo-install"
+      - "install-browser"
 
   - id: "prep-runner"
     name: "Run to prepare GitHub runner"
@@ -101,6 +112,7 @@ waves:
       - "repo-install"
       - "repo-gitconfig"
       - "install-lint-tools"
+      - "install-browser"
 
   - id: "build"
     name: "Build site"

@@ -45,15 +45,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
+      - name: Write version.txt
+        run: npm run write-version
+        env:
+          BUILD_REPO: ${{ github.repository }}
+          BUILD_REF: ${{ github.ref_name }}
+          BUILD_SHA: ${{ github.sha }}
+
       - name: Build with Astro
         run: npm run build -- --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
-
-      - name: Version.txt
-        id: version
-        run: |
-          echo "Build from ${{ github.repository }}" > astro/dist/version.txt
-          echo "Ref: ${{ github.ref_name }}" >> astro/dist/version.txt
-          echo "Commit: ${{ github.sha }}" >> astro/dist/version.txt
 
       - name: Upload build artifact
         id: upload-artifact
