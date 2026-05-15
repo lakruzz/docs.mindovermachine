@@ -30,7 +30,12 @@ function extractJson(text) {
 function isBroken(link) {
   const status = Number(link?.status || 0);
   const state = String(link?.state || "").toUpperCase();
-  return status >= 400 || state.includes("BROKEN") || state.includes("ERROR") || state.includes("FAIL");
+  return (
+    status >= 400 ||
+    state.includes("BROKEN") ||
+    state.includes("ERROR") ||
+    state.includes("FAIL")
+  );
 }
 
 function normalizeInternalTarget(url) {
@@ -38,7 +43,12 @@ function normalizeInternalTarget(url) {
   const raw = String(url).trim();
   if (!raw) return null;
   if (/^https?:\/\//i.test(raw)) return null;
-  if (raw.startsWith("#") || raw.startsWith("mailto:") || raw.startsWith("javascript:")) return null;
+  if (
+    raw.startsWith("#") ||
+    raw.startsWith("mailto:") ||
+    raw.startsWith("javascript:")
+  )
+    return null;
 
   const noHash = raw.split("#")[0];
   const noQuery = noHash.split("?")[0];
@@ -78,9 +88,13 @@ function walkDocsFiles(rootDir) {
 
 function buildNeedles(targetPath) {
   const withSlash = targetPath;
-  const withoutSlash = targetPath.endsWith("/") ? targetPath.slice(0, -1) : targetPath;
+  const withoutSlash = targetPath.endsWith("/")
+    ? targetPath.slice(0, -1)
+    : targetPath;
   const relWithSlash = withSlash.slice(1);
-  const relWithoutSlash = withoutSlash.startsWith("/") ? withoutSlash.slice(1) : withoutSlash;
+  const relWithoutSlash = withoutSlash.startsWith("/")
+    ? withoutSlash.slice(1)
+    : withoutSlash;
 
   return new Set([
     withSlash,
@@ -106,7 +120,9 @@ function findSourceFilesForTarget(targetPath, docsFiles) {
     const content = readFileSync(file, "utf8");
     for (const needle of needles) {
       if (needle && content.includes(needle)) {
-        matches.push(file.replace(/^.*?\/workspaces\/lean-crowd-manifest\//, ""));
+        matches.push(
+          file.replace(/^.*?\/workspaces\/lean-crowd-manifest\//, ""),
+        );
         break;
       }
     }
@@ -162,10 +178,14 @@ for (const link of brokenLinks) {
   }
 }
 
-process.stdout.write(`Detected ${brokenLinks.length} broken links (${grouped.size} unique targets).\n\n`);
+process.stdout.write(
+  `Detected ${brokenLinks.length} broken links (${grouped.size} unique targets).\n\n`,
+);
 
 for (const [, item] of grouped) {
-  process.stdout.write(`- ${item.target} [${Array.from(item.statuses).join(", ")}]\n`);
+  process.stdout.write(
+    `- ${item.target} [${Array.from(item.statuses).join(", ")}]\n`,
+  );
 
   const sourceCandidates = item.target.startsWith("/")
     ? findSourceFilesForTarget(item.target, docsFiles)

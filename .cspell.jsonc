@@ -25,7 +25,7 @@
     "**/go.sum",
     "**/htmlcov/**",
     "output/**",
-    "config/*.yaml"
+    "config/*.yaml",
   ],
   "files": [
     "**/*.md",
@@ -36,24 +36,24 @@
     "**/*.jsonc",
     "**/*.yml",
     "**/*.yaml",
-    "**/*.html"
+    "**/*.html",
   ],
   "dictionaryDefinitions": [
     {
       "name": "Repo dictionary",
-      "path": "./.dict/repo.dictionary"
-    }
+      "path": "./.dict/repo.dictionary",
+    },
   ],
   "dictionaries": ["Repo dictionary"],
   "languageSettings": [
     {
       "languageId": "markdown",
-      "dictionaries": ["Repo dictionary"]
+      "dictionaries": ["Repo dictionary"],
     },
     {
       "languageId": "plaintext",
-      "dictionaries": ["Repo dictionary"]
-    }
+      "dictionaries": ["Repo dictionary"],
+    },
   ],
   "ignoreRegExpList": [
     "{%[\\s\\S]*?%}", // ignore inline liquid tags
@@ -67,6 +67,6 @@
     "'.*'", // ignore text in single quotes
     "https?://\\S+", // ignore http/https URLs
     "\\b[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(?:/\\S*)?", // ignore domain names and URLs like example.com or example.com/path
-    "\\[\\^\\w+\\]" // ignore markdown footnotes
-  ]
+    "\\[\\^\\w+\\]", // ignore markdown footnotes
+  ],
 }

@@ -13,7 +13,9 @@ function normalizePath(value) {
   const withoutQuery = withoutHash.split("?")[0];
   if (!withoutQuery) return null;
 
-  const withLeadingSlash = withoutQuery.startsWith("/") ? withoutQuery : `/${withoutQuery}`;
+  const withLeadingSlash = withoutQuery.startsWith("/")
+    ? withoutQuery
+    : `/${withoutQuery}`;
   const collapsed = withLeadingSlash.replace(/\/+/g, "/");
 
   if (collapsed !== "/" && collapsed.endsWith("/")) {
@@ -137,7 +139,11 @@ function routeFromFile(filePath, docsRoot, localePrefixes, slugValue) {
   const normalizedSlug = normalizePath(slugValue);
 
   if (normalizedSlug) {
-    if (localePrefix && normalizedSlug !== `/${localePrefix}` && !normalizedSlug.startsWith(`/${localePrefix}/`)) {
+    if (
+      localePrefix &&
+      normalizedSlug !== `/${localePrefix}` &&
+      !normalizedSlug.startsWith(`/${localePrefix}/`)
+    ) {
       return normalizePath(`/${localePrefix}${normalizedSlug}`);
     }
 
@@ -180,10 +186,17 @@ export function collectFrontmatterRedirects({
     if (!frontmatter) continue;
 
     const slugValue = getScalarField(frontmatter, "slug");
-    const target = routeFromFile(filePath, resolvedDocsRoot, localePrefixSet, slugValue);
+    const target = routeFromFile(
+      filePath,
+      resolvedDocsRoot,
+      localePrefixSet,
+      slugValue,
+    );
     if (!target) continue;
 
-    const redirectFromValues = redirectFields.flatMap((field) => getFieldValues(frontmatter, field));
+    const redirectFromValues = redirectFields.flatMap((field) =>
+      getFieldValues(frontmatter, field),
+    );
 
     for (const sourceValue of redirectFromValues) {
       const source = normalizePath(sourceValue);
@@ -191,7 +204,12 @@ export function collectFrontmatterRedirects({
 
       if (redirects[source] && redirects[source] !== target) {
         if (onConflict) {
-          onConflict({ source, existing: redirects[source], incoming: target, filePath });
+          onConflict({
+            source,
+            existing: redirects[source],
+            incoming: target,
+            filePath,
+          });
         }
         continue;
       }

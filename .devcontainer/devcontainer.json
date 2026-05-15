@@ -10,12 +10,17 @@
   },
   "postCreateCommand": "gh ext install devx-cafe/gh-insitu && gh insitu run post-create",
   "features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/devcontainers/features/github-cli:1": {},
-		"ghcr.io/devcontainers-extra/features/npm-packages:1": {
-			"packages": ["cspell", "markdownlint-cli2", "prettier", "@cspell/dict-da-dk"]
-		}
-	},
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/npm-packages:1": {
+      "packages": [
+        "cspell",
+        "markdownlint-cli2",
+        "prettier",
+        "@cspell/dict-da-dk"
+      ]
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -39,10 +44,10 @@
       }
     }
   },
-	"mounts": [
-		"source=${localEnv:HOME},target=/localhome,type=bind,consistency=cached"
-	],
-	"remoteEnv": {
-		"GH_TOKEN": "${localEnv:GH_TOKEN}"
-	}
+  "mounts": [
+    "source=${localEnv:HOME},target=/localhome,type=bind,consistency=cached"
+  ],
+  "remoteEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  }
 }

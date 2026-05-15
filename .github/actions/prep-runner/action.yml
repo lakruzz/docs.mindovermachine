@@ -25,7 +25,7 @@ runs:
       with:
         node-version: 22
         cache: npm
-        cache-dependency-path: astro/package-lock.json     
+        cache-dependency-path: astro/package-lock.json
 
     - name: Prepare runner environment
       shell: bash
@@ -36,4 +36,3 @@ runs:
       if: ${{ inputs.verify }}
       shell: bash
       run: ${{ inputs.verify }}
-    

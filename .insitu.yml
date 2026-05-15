@@ -24,6 +24,10 @@ inventory:
     name: "Run markdownlint"
     command: "markdownlint-cli2"
 
+  - id: "prettier"
+    name: "Run Prettier"
+    command: "prettier --check ."
+
   - id: "install-takt-shortcuts"
     name: "Install Takt Shortcuts"
     command: |
@@ -41,7 +45,7 @@ inventory:
     command: |
       git config --local --get include.path | grep -e ../.gitconfig >/dev/null 2>&1 || \
       git config --local --add include.path ../.gitconfig
-  
+
   - id: astro-install
     name: "Install Astro dependencies"
     command: |
@@ -56,16 +60,24 @@ inventory:
     name: "Check for broken links"
     command: "npm run check-links"
 
-
   - id: "install-lint-tools"
     name: "Install linting and checker tools"
     command: |
       npm install -g cspell markdownlint-cli2 @cspell/dict-da-dk prettier
 
-
   - id: "build"
     name: "Build site"
     command: "npm run build"
+
+  - id: "fix-markdown"
+    name: "Fix all fixable markdown issues"
+    command: |
+      markdownlint-cli2 --fix
+
+  - id: "fix-prettier"
+    name: "Fix all fixable prettier issues"
+    command: |
+      prettier --write .
 
 waves:
   - id: "post-create"
@@ -79,7 +91,7 @@ waves:
       - "repo-gitconfig"
       - "astro-install"
       - "repo-install"
-      
+
   - id: "prep-runner"
     name: "Run to prepare GitHub runner"
     parallel: true
@@ -103,9 +115,17 @@ waves:
       - "cspell"
       - "markdownlint"
       - "build"
+      - "prettier"
 
   - id: "link-checker"
     name: "Worthy for trunk - post-build "
     parallel: true
     checks:
       - "link-checker"
+
+  - id: "fix-all"
+    name: "Fix anything that can be fixed automatically"
+    parallel: true
+    checks:
+      - "fix-markdown"
+      - "fix-prettier"
