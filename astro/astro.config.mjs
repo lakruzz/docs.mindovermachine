@@ -234,9 +234,9 @@ export default defineConfig({
               slug: "governance/annual-cycle",
             },
             {
-              label: "Representative Council",
-              translations: { da: "Repræsentantskab" },
-              slug: "governance/representative-council",
+              label: "Initiative Circle",
+              translations: { da: "Initiativkredsen" },
+              slug: "governance/initiative-circle",
             },
             {
               label: "Instructions",

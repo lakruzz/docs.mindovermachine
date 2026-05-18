@@ -52,7 +52,7 @@ Deployment nuance:
 │               │   ├── vision/     # manifesto.mdx, crowd-values.mdx
 │               │   ├── about/      # contact.mdx, founder-story.mdx
 │               │   ├── governance/ # charter, statutes, rules-of-procedure, annual-cycle,
-│               │   │               # three-pillars, representative-council, instructions,
+│               │   │               # three-pillars, initiative-circle, instructions,
 │               │   │               # ethical-assessment, board-instructions, executive-instructions
 │               │   └── methodology/# collaboration.mdx, how-we-work.mdx
 │               └── en/             # Secondary locale (English) — mirrors da/ structure
